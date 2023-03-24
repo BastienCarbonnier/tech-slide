@@ -8,23 +8,40 @@
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/maplr.css">
+		<script>
+			let theme = new URLSearchParams(window.location.search).get('theme');
+			theme = theme != undefined ? theme : 'portfolio';
+
+			const logo_by_theme = {
+				'maplr' : 'assets/logo-maplr.png'
+			};
+
+			const logo = logo_by_theme[theme];
+			console.log(logo);
+			document.write('<link rel="stylesheet" href="dist/theme/' + theme + '.css">');
+		</script>
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
 	</head>
 	<body>
-		<img id="myLogo" src="assets/logo-maplr-v2.png" style="position: absolute;
-						bottom: 10px;
-                        width: 100px;
-                        height: 100px;"/>
+		<script>
+			if (!!logo) {
+				document.write('<img src="' + logo + '" style="position: absolute; bottom: 10px;width: 100px;height: 100px;"/>');
+			}
+		</script>
+		
 		<div class="reveal">
 			<div class="slides">
 				<!--TITLE SLIDE-->
 				<section  data-transition="zoom">
 					<h2>{TITLE}</h2>
 					<h3>{SUB-TITLE}</h3>
-					<img width="200" height="200" src="assets/logo-maplr-v2.png" alt="Maplr logo">
+					<script>
+						if (!!logo) {
+							document.write('<img width="200" height="200" src="' + logo + '" alt="">');
+						}
+					</script>
 				</section>
 
 				<!--SUMARY SLIDE-->

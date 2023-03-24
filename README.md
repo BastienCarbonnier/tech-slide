@@ -19,8 +19,3 @@ The framework comes with a powerful feature set including [nested slides](https:
 ### Getting started
 - 🚀 [Install reveal.js](https://revealjs.com/installation)
 - 📖 [Read the documentation](https://revealjs.com/markup/)
-
---- 
-<div align="center">
-  MIT licensed | Copyright © 2023 maplr, https://maplr.co
-</div>
