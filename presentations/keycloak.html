@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="../dist/reset.css">
+		<link rel="stylesheet" href="../dist/reveal.css">
+		<script>
+			let theme = new URLSearchParams(window.location.search).get('theme');
+			theme = theme != undefined ? theme : 'portfolio';
+
+			const logo_by_theme = {
+				'maplr' : '../assets/logo-maplr.png'
+			};
+
+			const logo = logo_by_theme[theme];
+			console.log(logo);
+			document.write('<link rel="stylesheet" href="../dist/theme/' + theme + '.css">');
+		</script>
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<script>
+			if (!!logo) {
+				document.write('<img src="' + logo + '" style="position: absolute; bottom: 10px;width: 100px;height: 100px;"/>');
+			}
+		</script>
+		
+		<div class="reveal">
+			<div class="slides">
+				<!--TITLE SLIDE-->
+				<section  data-transition="zoom">
+					<h2>Keycloak</h2>
+					<h3>{SUB-TITLE}</h3>
+					<script>
+						if (!!logo) {
+							document.write('<img width="200" height="200" src="' + logo + '" alt="">');
+						}
+					</script>
+				</section>
+
+				<!--SUMARY SLIDE-->
+				<section data-transition="convex">
+					<h2>{SUMARY}</h2>
+					<ul>
+						<li>{FIRST_PONT}</li>
+						<li>{SECOND_PONT}</li>
+						<li>{THERD}</li>
+						<li>{THERD}</li>
+						<li>{THERD}</li>
+						<li>{THERD}</li>
+						<li>{THERD}</li>
+						<li>{THERD}</li>
+						<li>{THERD}</li>
+						<li>{THERD}</li>
+					</ul>
+				</section>
+				
+				<!--FIRST_PONT SLIDE-->
+				<section data-transition="convex">
+					<section>
+						<h2>{FIRST_PONT}</h2>
+						<h3>{SUB_TITLE_1}</h3>
+						<p>
+							Lorem Ipsum is simply dummy text of the printing and typesetting  industry. Lorem Ipsum has been the industry's standard dummy text  ever since the 1500s, when an unknown printer took a galley of type and  scrambled it to make a type specimen book. It has survived not only five  centuries, but also the leap
+						</p>
+					</section>
+					<section>
+						<h2>{FIRST_PONT}</h2>
+						<h3>{SUB_TITLE_2}</h3>
+						<p>
+							Lorem Ipsum is simply dummy text of the printing and typesetting  industry. Lorem Ipsum has been the industry's standard dummy text  ever since the 1500s, when an unknown printer took a galley of type and  scrambled it to make a type specimen book. It has survived not only five  centuries, but also the leap
+						</p>
+					</section>
+					<section>
+						<h2>{FIRST_PONT}</h2>
+						<h3>{SUB_TITLE_3}</h3>
+						<p>
+							Lorem Ipsum is simply dummy text of the printing and typesetting  industry. Lorem Ipsum has been the industry's standard dummy text  ever since the 1500s, when an unknown printer took a galley of type and  scrambled it to make a type specimen book. It has survived not only five  centuries, but also the leap
+						</p>
+					</section>
+				</section>
+
+				<!--SECOND_PONT SLIDE-->
+				<section data-transition="convex">
+					<section>
+						<h2>{SECOND_PONT}</h2>
+						<h3>{SUB_TITLE_1}</h3>
+						<p>
+							Lorem Ipsum is simply dummy text of the printing and typesetting  industry. Lorem Ipsum has been the industry's standard dummy text  ever since the 1500s, when an unknown printer took a galley of type and  scrambled it to make a type specimen book. It has survived not only five  centuries, but also the leap
+						</p>
+					</section>
+					<section>
+						<h2>{SECOND_PONT}</h2>
+						<h3>{SUB_TITLE_2}</h3>
+						<p>
+							Lorem Ipsum is simply dummy text of the printing and typesetting  industry. Lorem Ipsum has been the industry's standard dummy text  ever since the 1500s, when an unknown printer took a galley of type and  scrambled it to make a type specimen book. It has survived not only five  centuries, but also the leap
+						</p>
+					</section>
+					<section>
+						<h2>{SECOND_PONT}</h2>
+						<h3>{SUB_TITLE_3}</h3>
+						<p>
+							Lorem Ipsum is simply dummy text of the printing and typesetting  industry. Lorem Ipsum has been the industry's standard dummy text  ever since the 1500s, when an unknown printer took a galley of type and  scrambled it to make a type specimen book. It has survived not only five  centuries, but also the leap
+						</p>
+					</section>
+				</section>
+
+				<!--QUESTION SLIDE-->
+				<section data-transition="zoom">
+					<h2>MERCI</h2>
+					<h3>DES QUESTIONS ?</h3>
+				</section>
+			</div>
+		</div>
+
+		<script src="../dist/reveal.js"></script>
+		<script src="../plugin/notes/notes.js"></script>
+		<script src="../plugin/markdown/markdown.js"></script>
+		<script src="../plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
