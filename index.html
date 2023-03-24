@@ -25,19 +25,26 @@
 		</script>
 	</head>
 	<body class="container">
-		<main class="row">
-			<header class="col">
-				<div class="row">
-					<h1>Tech slide</h1>
-				</div>
-			</header>
+		<main>
+			<div class="col">
+				<header class="row">
+					<h1>Technical slide</h1>
+				</header>
+			</div>
+			
 			<div class="col">
 				<div class="row">
-					<ul class="list-group">
-						<script>
-							document.write('<li class="list-group-item"><a href="' + presentationsUrl + 'keycloak.html' + '">Keycloak présentation</a></li>');
-						</script>
-					</ul>
+					<div class="card" style="width: 18rem;">
+						<div class="card-body">
+							<h5 class="card-title">Keycloak présentation</h5>
+							<p class="card-text">
+								Présentation sur Keycloak et l'authentification en général.
+							</p>
+							<script>
+								document.write('<a class="btn btn-primary" href="' + presentationsUrl + 'keycloak.html' + '">Accéder à la présentation</a>');
+							</script>
+						</div>
+					</div>
 				</div>
 			</div>
 			<footer></footer>
