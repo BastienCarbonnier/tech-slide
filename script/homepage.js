@@ -39,5 +39,5 @@ $(document).ready(function () {
 
 function goToPresentation(presentation, theme) {
   window.location.href =
-    presentationsUrl + presentation + ".html?theme=" + theme;
+    origin + "/presentations/" + presentation + "/?theme=" + theme;
 }
