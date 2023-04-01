@@ -26,7 +26,40 @@
 			</div>
 			
 			<div class="col">
-				<div class="row" id="cards-list"></div>
+				<div class="row">
+					<form class="form-group">
+						<label class="form-label d-inline-block" for="themes">Veuillez selectionner le thème que vous souhaitez utiliser :</label>
+						<select class="form-select d-inline-block w-auto" id="themes">
+							<script>
+								let themes_html = "";
+								themes.forEach((theme) => {
+									themes_html +=
+										'<option value="' + theme.id + '">' + theme.label + '</option>';
+								});
+								document.write(themes_html);
+							</script>
+						</select>
+						<span id="exemple-theme" style="font-size: 1.5rem; font-weight: 500;">Exemple theme color</span>
+					</form>
+					<script>
+						function setExampleColors(theme_id) {
+							const example_theme = document.getElementById('exemple-theme');
+							let selected_theme = themes.find((theme) => theme.id === theme_id);
+							example_theme.style.color = selected_theme.colors.title;
+							example_theme.style.background = selected_theme.colors.background;
+						}
+						
+						const theme_select = document.querySelector("#themes");
+						if (theme_select.value) {
+							setExampleColors(theme_select.value);
+						}
+
+						theme_select.addEventListener("change", (event) => {
+							setExampleColors(event.target.value);
+						});
+					</script>
+				</div>
+				<div class="row pt-3" id="cards-list"></div>
 			</div>
 			<footer></footer>
 		</main>
