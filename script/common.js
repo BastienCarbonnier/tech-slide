@@ -11,12 +11,12 @@ const themes = [
     }
   },
   {
-    id: "intact",
+    id: "intact-lab",
     label: "Intact Lab",
     logo: undefined, 
     colors: {
-      background: '#2163bb',
-      title: '#13ed58'
+      background: '#e3f0f1',
+      title: '#1db5be'
     }
   },
   {
@@ -40,7 +40,7 @@ const presentations = [
   {
     id: "k6",
     title: "K6 présentation",
-    description: "Présentation sur K6 et les test de montées en charge.",
+    description: "Présentation sur K6 et les tests de montées en charge.",
     logo: "https://upload.wikimedia.org/wikipedia/commons/e/ef/K6-logo.svg"
   }
 ];

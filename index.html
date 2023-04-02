@@ -39,11 +39,11 @@
 								document.write(themes_html);
 							</script>
 						</select>
-						<span id="exemple-theme" style="font-size: 1.5rem; font-weight: 500;">Exemple theme color</span>
+						<span id="example-theme">Exemple theme color</span>
 					</form>
 					<script>
 						function setExampleColors(theme_id) {
-							const example_theme = document.getElementById('exemple-theme');
+							const example_theme = document.getElementById('example-theme');
 							let selected_theme = themes.find((theme) => theme.id === theme_id);
 							example_theme.style.color = selected_theme.colors.title;
 							example_theme.style.background = selected_theme.colors.background;
