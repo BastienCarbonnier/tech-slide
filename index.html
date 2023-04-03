@@ -19,27 +19,35 @@
 	</head>
 	<body class="container">
 		<main>
-			<div class="col">
-				<header class="row">
+			<div class="row">
+				<header class="col">
 					<h1>Technical slides</h1>
 				</header>
 			</div>
 			
-			<div class="col">
-				<div class="row">
+			<div class="row">
+				<div class="col">
 					<form class="form-group">
-						<label class="form-label d-inline-block" for="themes">Veuillez selectionner le thème que vous souhaitez utiliser :</label>
-						<select class="form-select d-inline-block w-auto" id="themes">
-							<script>
-								let themes_html = "";
-								themes.forEach((theme) => {
-									themes_html +=
-										'<option value="' + theme.id + '">' + theme.label + '</option>';
-								});
-								document.write(themes_html);
-							</script>
-						</select>
-						<span id="example-theme">Exemple theme color</span>
+						<div class="row">
+							<div class="col-auto align-self-center">
+								<label for="themes">Veuillez selectionner le thème que vous souhaitez utiliser :</label>
+							</div>
+							<div class="col-auto align-self-center">
+								<select class="form-select w-auto" id="themes">
+									<script>
+										let themes_html = "";
+										themes.forEach((theme) => {
+											themes_html +=
+												'<option value="' + theme.id + '">' + theme.label + '</option>';
+										});
+										document.write(themes_html);
+									</script>
+								</select>
+							</div>
+							<div class="col-auto">
+								<span id="example-theme">Exemple theme color</span>
+							</div>
+						</div>
 					</form>
 					<script>
 						function setExampleColors(theme_id) {
@@ -59,8 +67,8 @@
 						});
 					</script>
 				</div>
-				<div class="row pt-3" id="cards-list"></div>
 			</div>
+			<div class="row pt-3" id="cards-list"></div>
 			<footer></footer>
 		</main>
 	</body>
