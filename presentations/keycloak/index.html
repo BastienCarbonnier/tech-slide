@@ -13,9 +13,8 @@
             document.write('<link rel="stylesheet" href="' + origin + '/dist/reveal.css">');
             document.write('<link rel="stylesheet" href="' + origin + '/plugin/highlight/monokai.css">');
             document.write('<link rel="icon" type="image/x-icon" href="' + origin + '/assets/logo-maplr.png">');
-          
-						document.write('<link rel="stylesheet" href="' + origin + '/dist/theme/' + theme.id + '.css">');
-						document.write('<link rel="stylesheet" href="' + origin + '/common.css">');
+          	document.write('<link rel="stylesheet" href="' + origin + '/dist/theme/' + theme.id + '.css">');
+			document.write('<link rel="stylesheet" href="' + origin + '/common.css">');
         </script>
 	</head>
 	<body>
@@ -46,7 +45,7 @@
 						<li>Single-Sign On (SSO)</li>
 						<li>Les protocoles d'authentification</li>
 						<li>Keycloak</li>
-						<li>Customisation</li>
+						<li>Customisation et déployement</li>
 					</ul>
 				</section>
 				
@@ -58,23 +57,6 @@
 						<aside class="notes">
 							Shhh, these are your private notes 📝
 						</aside>
-					</section>
-					<section>
-						<h2>{FIRST_PONT}</h2>
-						<h3>{SUB_TITLE_2}</h3>
-						<p class="text-secondary">
-							<img width="200" src="https://openid.net/wordpress-content/uploads/2014/09/openid-r-logo-900x360.png" />
-						</p>
-						<p>
-							Lorem Ipsum is simply dummy text of the printing and typesetting  industry. Lorem Ipsum has been the industry's standard dummy text  ever since the 1500s, when an unknown printer took a galley of type and  scrambled it to make a type specimen book. It has survived not only five  centuries, but also the leap
-						</p>
-					</section>
-					<section>
-						<h2>{FIRST_PONT}</h2>
-						<h3>{SUB_TITLE_3}</h3>
-						<p>
-							Lorem Ipsum is simply dummy text of the printing and typesetting  industry. Lorem Ipsum has been the industry's standard dummy text  ever since the 1500s, when an unknown printer took a galley of type and  scrambled it to make a type specimen book. It has survived not only five  centuries, but also the leap
-						</p>
 					</section>
 				</section>
 
@@ -98,6 +80,27 @@
 							<li>Interface d'administration</li>
 							<li>Fournisseurs d'identités</li>
 							<li>Création de clients</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Keycloak</h2>
+						<h3>Customisation - mise à jour du thème</h3>
+						<ul>
+							<li>Modification des couleurs</li>
+							<li>Ajout de nouveaux champs dans les formulaires (création, mise à jour)</li>
+							<li>Possibilité de gérer plusieurs thèmes</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Keycloak</h2>
+						<h3>Customisation - SPI (Services Provider Interfaces)</h3>
+						<ul>
+							<li>Exécuté durant les différentes phases d'authentification</li>
+							<li>Permet la mise à jour automatique de données</li>
+						</ul>
+						<b style="text-align:left">Exemple :</b>
+						<ul>
+							<li>Ajout d'un attribut lors de la création d'un compte</li>
 						</ul>
 					</section>
 				</section>
