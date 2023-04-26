@@ -20,11 +20,11 @@
 	<body>
 		<script>
 			if (!!theme?.logo) {
-				document.write('<img src="' + theme.logo + '" style="position: absolute; bottom: 10px;width: 100px;height: 100px;"/>');
+				document.write('<img src="' + theme.logo + '" style="position: absolute; bottom: 10px; left:0px;width: 100px;height: 100px;"/>');
 			}
 		</script>
-		
 		<div class="reveal">
+			<header class="header-keycloak"></header>
 			<div class="slides">
 				<!--TITLE SLIDE-->
 				<section  data-transition="zoom">
@@ -60,9 +60,8 @@
 					</section>
 				</section>
 
-				<section data-transition="convex">
+				<section data-transition="convex" data-state="header header-img">
 					<section>
-						<h2>Keycloak</h2>
 						<h3>Présentation générale</h3>
 						<ul>
 							<li>Sortie en 2014</li>
@@ -72,8 +71,7 @@
 						</ul>
 					</section>
 					<section>
-						<h2>Keycloak</h2>
-						<h3>Fonctionalités</h3>
+						<h3>Fonctionnalités</h3>
 						<ul>
 							<li>Customisation (Thème, SPI)</li>
 							<li>Protocoles pris en charges (OpenID Connect, SAML 2.0, Kerberos)</li>
@@ -83,7 +81,6 @@
 						</ul>
 					</section>
 					<section>
-						<h2>Keycloak</h2>
 						<h3>Customisation - mise à jour du thème</h3>
 						<ul>
 							<li>Modification des couleurs</li>
@@ -92,15 +89,37 @@
 						</ul>
 					</section>
 					<section>
-						<h2>Keycloak</h2>
 						<h3>Customisation - SPI (Services Provider Interfaces)</h3>
 						<ul>
-							<li>Exécuté durant les différentes phases d'authentification</li>
+							<li>Exécuté durant les différentes phases de l'authentification</li>
 							<li>Permet la mise à jour automatique de données</li>
 						</ul>
-						<b style="text-align:left">Exemple :</b>
+						<span class="example"><b>Exemple :</b> Ajout d'un attribut lors de la création d'un compte</span>
+					</section>
+					<section>
+						<h3>Fournisseurs d'identités</h3>
 						<ul>
-							<li>Ajout d'un attribut lors de la création d'un compte</li>
+							<li>Connexion à partir de Google, Facebook, Github...</li>
+							<li>Compte créé de façon implicite</li>
+							<li>Possibilité de demander des infos supplémentaires à l'utilisateur</li>
+							<li>Redirection directe/indirecte</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Gestion des différentes applications</h3>
+						<ul>
+							<li>Création d'un client par application</li>
+							<li>Gestion des différences entre application</li>
+							<li>Pas de limites sur le nombre de clients</li>
+						</ul>
+					</section>
+
+					<section style="display: none;">
+						<h3>Performances</h3>
+						<ul>
+							<li>Test réalisé avec k6</li>
+							<li></li>
 						</ul>
 					</section>
 				</section>
@@ -137,7 +156,6 @@
 				</section>
 			</div>
 		</div>
-
 		<script>
 			Promise.all([
 				import(origin + '/dist/reveal.js'), 
@@ -150,6 +168,7 @@
 				// - https://revealjs.com/config/
 				Reveal.initialize({
 					hash: true,
+					slideNumber: 'c/t',
 
 					// Learn about plugins: https://revealjs.com/plugins/
 					plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
