@@ -9,14 +9,14 @@
  * GLOBAL STYLES
  *********************************************/
 :root {
-  --r-background-color: #223B5C;
+  --r-background-color: #e3f0f1;
   --r-main-font: Lato, Impact, sans-serif;
   --r-main-font-size: 40px;
-  --r-main-color: #fff;
+  --r-main-color: #1e1e1e;
   --r-block-margin: 20px;
   --r-heading-margin: 0 0 20px 0;
   --r-heading-font: Hanken Grotesk, Impact, sans-serif;
-  --r-heading-color: #FC0706;
+  --r-heading-color: #1db5be;
   --r-heading-line-height: 1.2;
   --r-heading-letter-spacing: -0.03em;
   --r-heading-text-transform: none;
@@ -28,15 +28,15 @@
   --r-heading3-size: 1em;
   --r-heading4-size: 1em;
   --r-code-font: monospace;
-  --r-link-color: #FC0706;
-  --r-link-color-dark: #b30302;
-  --r-link-color-hover: #fd6b6b;
+  --r-link-color: #1db5be;
+  --r-link-color-dark: #13767c;
+  --r-link-color-hover: #5bdee6;
   --r-selection-background-color: #FF5E99;
   --r-selection-color: #fff;
 }
 
 .reveal-viewport {
-  background: #223B5C;
+  background: #e3f0f1;
   background-color: var(--r-background-color);
 }
 
@@ -353,5 +353,5 @@
   }
 }
 .reveal h3 {
-  color: #fff;
+  color: #1e1e1e;
 }

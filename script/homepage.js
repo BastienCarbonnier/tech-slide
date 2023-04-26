@@ -1,43 +1,38 @@
 $(document).ready(function () {
-  let themes_html = "";
-  themes.forEach((theme) => {
-    themes_html +=
-      '<option value="' +
-      theme.id +
-      "-${presentation_id}" +
-      '">' +
-      theme.label +
-      "</option>";
-  });
-
   // We fetch card template and replace all value we need
   fetch("card_presentation.html")
     .then((response) => response.text())
     .then((card) => {
       let cards = "";
+
       presentations.forEach((presentation) => {
         let presentation_card = `${card}`;
         presentation_card = presentation_card
           .replace("${title}", presentation.title)
           .replace("${description}", presentation.description)
-          .replace("${themes}", themes_html)
+          .replace("${logo}", presentation.logo)
           .replaceAll("${presentation_id}", presentation.id);
         cards += presentation_card;
       });
+      // Writing cards to page
       document.getElementById("cards-list").innerHTML = cards;
 
-      const btn_see_presentation = document.querySelector("#see-presentation");
-      const theme_select = document.querySelector("#themes");
+      // We add action to every button of cards
+      presentations.forEach((presentation) => {
+        let btn_see_presentation = document.querySelector('#see-presentation-' + presentation.id);
 
-      btn_see_presentation.onclick = (event) => {
-        event.preventDefault();
-        const theme_selected_split = theme_select.value.split("-");
-        goToPresentation(theme_selected_split[1], theme_selected_split[0]);
-      };
+        btn_see_presentation.onclick = (event) => {
+          event.preventDefault();
+          console.log(event)
+          let theme_select = document.querySelector("#themes");
+          goToPresentation(presentation.id, theme_select.value);
+        };
+      })
     });
 });
 
 function goToPresentation(presentation, theme) {
+  console.log(presentation);
   window.location.href =
-    presentationsUrl + presentation + ".html?theme=" + theme;
+    origin + "/presentations/" + presentation + "/?theme=" + theme;
 }

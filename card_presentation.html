@@ -1,16 +1,15 @@
-<div class="card" style="width: 18rem;">
-		<div class="card-body">
-			<h5 class="card-title">${title}</h5>
-			<p class="card-text">
-				${description}
-			</p>
-			<form>
-				<label for="themes">Veuillez selectionner le thème :</label>
-				<select class="form-select" id="themes">
-					${themes}
-				</select>
-				<button class="btn btn-primary" id="see-presentation">Voir la présentation</button>
-			</form>
+<div class="col-sm-12 col-lg-6">
+	<div class="card h-100" id="presentation-${presentation_id}">
+			<div class="card-img-top text-center" style="height:10rem">
+				<img src="${logo}" alt="" style="height:10rem; width: 50%;">
+			</div>
+			<div class="card-body">
+				<h5 class="card-title">${title}</h5>
+				<p class="card-text">
+					${description}
+				</p>
+				<button class="btn btn-primary w-100" id="see-presentation-${presentation_id}">Accéder à la présentation</button>
+			</div>
 		</div>
 	</div>
 </div>

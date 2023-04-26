@@ -12,22 +12,63 @@
   			src="https://code.jquery.com/jquery-3.6.4.slim.min.js"
 			integrity="sha256-a2yjHM4jnF9f54xUQakjZGaqYs/V1CYvWpoqZzC2/Bw="
 			crossorigin="anonymous"></script>
-		<script src="./common.js"></script>
-		<script src="./presentations.js"></script>
-		<link rel="icon" type="image/x-icon" href="/assets/logo-maplr.png">
-		<link rel="stylesheet" href="../common.css">
+		<script src="./script/common.js"></script>
+		<script src="./script/homepage.js"></script>
+		<link rel="icon" type="image/x-icon" href="./assets/logo-maplr.png">
+		<link rel="stylesheet" href="./common.css">
 	</head>
 	<body class="container">
 		<main>
-			<div class="col">
-				<header class="row">
-					<h1>Technical slide</h1>
+			<div class="row">
+				<header class="col">
+					<h1>Technical slides</h1>
 				</header>
 			</div>
 			
-			<div class="col">
-				<div class="row" id="cards-list"></div>
+			<div class="row">
+				<div class="col">
+					<form class="form-group">
+						<div class="row">
+							<div class="col-auto align-self-center">
+								<label for="themes">Veuillez selectionner le thème que vous souhaitez utiliser :</label>
+							</div>
+							<div class="col-auto align-self-center">
+								<select class="form-select w-auto" id="themes">
+									<script>
+										let themes_html = "";
+										themes.forEach((theme) => {
+											themes_html +=
+												'<option value="' + theme.id + '">' + theme.label + '</option>';
+										});
+										document.write(themes_html);
+									</script>
+								</select>
+							</div>
+							<div class="col-auto">
+								<span id="example-theme">Exemple theme color</span>
+							</div>
+						</div>
+					</form>
+					<script>
+						function setExampleColors(theme_id) {
+							const example_theme = document.getElementById('example-theme');
+							let selected_theme = themes.find((theme) => theme.id === theme_id);
+							example_theme.style.color = selected_theme.colors.title;
+							example_theme.style.background = selected_theme.colors.background;
+						}
+						
+						const theme_select = document.querySelector("#themes");
+						if (theme_select.value) {
+							setExampleColors(theme_select.value);
+						}
+
+						theme_select.addEventListener("change", (event) => {
+							setExampleColors(event.target.value);
+						});
+					</script>
+				</div>
 			</div>
+			<div class="row pt-3" id="cards-list"></div>
 			<footer></footer>
 		</main>
 	</body>

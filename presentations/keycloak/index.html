@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Keycloak slides</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+			integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+				<script src="../../script/common.js"></script>
+        <script src="../../script/presentations.js"></script>
+        <script>
+            document.write('<link rel="stylesheet" href="' + origin + '/dist/reveal.css">');
+            document.write('<link rel="stylesheet" href="' + origin + '/plugin/highlight/monokai.css">');
+            document.write('<link rel="icon" type="image/x-icon" href="' + origin + '/assets/logo-maplr.png">');
+          	document.write('<link rel="stylesheet" href="' + origin + '/dist/theme/' + theme.id + '.css">');
+						document.write('<link rel="stylesheet" href="' + origin + '/common.css">');
+        </script>
+	</head>
+	<body>
+		<script>
+			if (!!theme?.logo) {
+				document.write('<img src="' + theme.logo + '" style="position: absolute; bottom: 10px; left:0px;width: 100px;height: 100px;"/>');
+			}
+		</script>
+		<div class="reveal">
+			<header class="header-keycloak"></header>
+			<div class="slides">
+				<!--TITLE SLIDE-->
+				<section  data-transition="zoom">
+					<img width="200" src="https://www.keycloak.org/resources/images/keycloak_logo_200px.svg"/>
+					<h2>Keycloak</h2>
+					<h3>Le maître des clés !</h3>
+					<script>
+						if (!!theme?.logo) {
+							document.write('<img width="200" height="200" src="' + theme.logo + '" alt="">');
+						}
+					</script>
+				</section>
+
+				<!--SUMMARY SLIDE-->
+				<section data-transition="convex">
+					<h2>Sommaire</h2>
+					<ul>
+						<li>Single-Sign On (SSO)</li>
+						<li>L'outil Keycloak</li>
+						<li>Performances</li>
+						<li>Démonstration</li>
+					</ul>
+				</section>
+				
+				<!--FIRST_PONT SLIDE-->
+				<section data-transition="convex">
+					<section>
+						<h2>Single-Sign On (SSO)</h2>
+						<img src="../../assets/presentations/keycloak/sso_diagrams.png" alt="">
+						<aside class="notes">
+							Sso
+						</aside>
+					</section>
+				</section>
+
+				<!--SECOND_PONT SLIDE-->
+				<section data-transition="convex" data-state="header header-img">
+					<section>
+						<h3>Présentation générale</h3>
+						<ul>
+							<li>Sortie en 2014</li>
+							<li>Open source</li>
+							<li>Développé initialement par JBoss</li>
+							<li>Depuis 2018 sous la gérance de RedHat</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Fonctionnalités principales</h3>
+						<ul>
+							<li>Customisation (Thème, SPI)</li>
+							<li>Différents modes d'authentification</li>
+							<li>Fournisseurs d'identités</li>
+							<li>Gestion des différentes applications</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Customisation - mise à jour du thème</h3>
+						<ul>
+							<li>Modification des couleurs</li>
+							<li>Ajout de nouveaux champs dans les formulaires (création, mise à jour)</li>
+							<li>Possibilité de gérer plusieurs thèmes</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Customisation - SPI (Services Provider Interfaces)</h3>
+						<ul>
+							<li>Exécuté durant les différentes phases de l'authentification</li>
+							<li>Permet la mise à jour automatique de données</li>
+						</ul>
+						<span class="example"><b>Exemple :</b> Ajout d'un attribut lors de la création d'un compte</span>
+					</section>
+					<section>
+						<h3>Différents modes d'authentification</h3>
+						<ul>
+							<li>OAuth 2.0 (OpenID Connect)</li>
+							<li>Kerberos</li>
+							<li>SAML</li>
+							<li>Synchronisation d'utilisateurs par LDAP ou Active Directory</li>
+							<li>Double authentification</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Fournisseurs d'identités</h3>
+						<ul>
+							<li>Connexion à partir de Google, Facebook, Github, France Connect...</li>
+							<li>Compte créé de façon implicite</li>
+							<li>Possibilité de demander des infos supplémentaires à l'utilisateur</li>
+							<li>Redirection directe/indirecte</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Gestion des différentes applications</h3>
+						<ul>
+							<li>Création d'un client par application</li>
+							<li>Gestion des différences entre applications</li>
+							<li>Pas de limites sur le nombre de clients</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Gestion des utilisateurs</h3>
+						<ul>
+							<li>Mise en place des groupes</li>
+							<li>Gestion des rôles utilisateurs ainsi que des rôles composites</li>
+							<li>Actions requises (changement de mot de passe...)</li>
+						</ul>
+					</section>
+				</section>
+			
+				<!--TROISIEME_PONT SLIDE-->
+				<section data-transition="convex" data-state="header header-img">
+					<section>
+						<h3>Tests de montée en charge</h3>
+						<h4>Conditions des tests</h4>
+						<ul>
+							<li>Utilisation de l'outil k6</li>
+							<li>Scénario de création de comptes et connexions</li>
+							<li>Génération d'utilisateurs virtuels simulant le comportement d'un utilisateur lambda</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Tests de montée en charge</h3>
+						<h4>Test 1 : 0 à 500 utilisateurs constant sur 15 minutes</h4>
+						<ul>
+							<li>Ressources allouées : 1500m CPU, 1GiB Mémoire</li>
+							<li>Nombre total de requêtes : ~265000</li>
+							<li>Tentatives de connexion : ~9100 dont 0 échouées</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Tests de montée en charge</h3>
+						<h4>Test 2 : 0 à 600 utilisateurs constant sur 60 minutes</h4>
+						<ul>
+							<li>Ressources allouées : 1500m CPU, 1GiB Mémoire</li>
+							<li>Nombre total de requêtes : ~1155000</li>
+							<li>Tentatives de connexion : ~38000 dont 530 échouées</li>
+							<li>Erreurs dû au nombre maximum de connexions à la bdd</li>
+						</ul>
+					</section>
+				</section>
+
+				<!--QUATRIEME_PONT SLIDE-->
+				<section data-transition="convex" data-state="header header-img">
+					<section>
+						<h3>Démonstration</h3>
+						<ul>
+							<li>Gestion des clients et utilisateurs</li>
+							<li>Présentation des rôles</li>
+							<li>Intégration à un projet Angular ou React</li>
+						</ul>
+					</section>
+				</section>
+
+				<!--QUESTION SLIDE-->
+				<section data-transition="zoom">
+					<h2>MERCI</h2>
+					<h3>DES QUESTIONS ?</h3>
+				</section>
+			</div>
+		</div>
+		<script>
+			Promise.all([
+				import(origin + '/dist/reveal.js'), 
+				import(origin + '/plugin/notes/notes.js'), 
+				import(origin + '/plugin/markdown/markdown.js'),
+				import(origin + '/plugin/highlight/highlight.js')
+			]).then(() => {
+				// More info about initialization & config:
+				// - https://revealjs.com/initialization/
+				// - https://revealjs.com/config/
+				Reveal.initialize({
+					hash: true,
+					slideNumber: 'c/t',
+
+					// Learn about plugins: https://revealjs.com/plugins/
+					plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+				});
+			})
+		</script>
+	</body>
+</html>

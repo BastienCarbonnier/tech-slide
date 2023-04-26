@@ -11,9 +11,10 @@ The framework comes with a powerful feature set including [nested slides](https:
 
 ---
 
-### DEMO
+### Access application
 
-![Alt Text](TechSlide.gif)
+You can access the application at the follow url : [Technical slides](https://bastiencarbonnier.github.io/tech-slides/)
+
 ---
 
 ### Getting started
