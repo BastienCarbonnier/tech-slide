@@ -14,7 +14,7 @@
             document.write('<link rel="stylesheet" href="' + origin + '/plugin/highlight/monokai.css">');
             document.write('<link rel="icon" type="image/x-icon" href="' + origin + '/assets/logo-maplr.png">');
           	document.write('<link rel="stylesheet" href="' + origin + '/dist/theme/' + theme.id + '.css">');
-			document.write('<link rel="stylesheet" href="' + origin + '/common.css">');
+						document.write('<link rel="stylesheet" href="' + origin + '/common.css">');
         </script>
 	</head>
 	<body>
@@ -38,14 +38,14 @@
 					</script>
 				</section>
 
-				<!--SUMARY SLIDE-->
+				<!--SUMMARY SLIDE-->
 				<section data-transition="convex">
 					<h2>Sommaire</h2>
 					<ul>
 						<li>Single-Sign On (SSO)</li>
-						<li>Les protocoles d'authentification</li>
-						<li>Keycloak</li>
-						<li>Customisation et déployement</li>
+						<li>L'outil Keycloak</li>
+						<li>Performances</li>
+						<li>Démonstration</li>
 					</ul>
 				</section>
 				
@@ -55,11 +55,12 @@
 						<h2>Single-Sign On (SSO)</h2>
 						<img src="../../assets/presentations/keycloak/sso_diagrams.png" alt="">
 						<aside class="notes">
-							Shhh, these are your private notes 📝
+							Sso
 						</aside>
 					</section>
 				</section>
 
+				<!--SECOND_PONT SLIDE-->
 				<section data-transition="convex" data-state="header header-img">
 					<section>
 						<h3>Présentation générale</h3>
@@ -74,10 +75,9 @@
 						<h3>Fonctionnalités</h3>
 						<ul>
 							<li>Customisation (Thème, SPI)</li>
-							<li>Protocoles pris en charges (OpenID Connect, SAML 2.0, Kerberos)</li>
-							<li>Interface d'administration</li>
+							<li>Différents modes d'authentification</li>
 							<li>Fournisseurs d'identités</li>
-							<li>Création de clients</li>
+							<li>Gestion des différentes applications</li>
 						</ul>
 					</section>
 					<section>
@@ -97,15 +97,24 @@
 						<span class="example"><b>Exemple :</b> Ajout d'un attribut lors de la création d'un compte</span>
 					</section>
 					<section>
+						<h3>Différents modes d'authentification</h3>
+						<ul>
+							<li>OAuth 2.0 (OpenID Connect)</li>
+							<li>Kerberos</li>
+							<li>SAML</li>
+							<li>Synchronisation d'utilisateurs par LDAP ou Active Directory</li>
+							<li>Double authentification</li>
+						</ul>
+					</section>
+					<section>
 						<h3>Fournisseurs d'identités</h3>
 						<ul>
-							<li>Connexion à partir de Google, Facebook, Github...</li>
+							<li>Connexion à partir de Google, Facebook, Github, France Connect...</li>
 							<li>Compte créé de façon implicite</li>
 							<li>Possibilité de demander des infos supplémentaires à l'utilisateur</li>
 							<li>Redirection directe/indirecte</li>
 						</ul>
 					</section>
-
 					<section>
 						<h3>Gestion des différentes applications</h3>
 						<ul>
@@ -114,38 +123,15 @@
 							<li>Pas de limites sur le nombre de clients</li>
 						</ul>
 					</section>
-
-					<section style="display: none;">
+				</section>
+			
+				<!--TROISIEME_PONT SLIDE-->
+				<section data-transition="convex" data-state="header header-img">
+					<section>
 						<h3>Performances</h3>
 						<ul>
-							<li>Test réalisé avec k6</li>
 							<li></li>
 						</ul>
-					</section>
-				</section>
-
-				<!--SECOND_PONT SLIDE-->
-				<section data-transition="convex">
-					<section>
-						<h2>{SECOND_PONT}</h2>
-						<h3>{SUB_TITLE_1}</h3>
-						<p>
-							Lorem Ipsum is simply dummy text of the printing and typesetting  industry. Lorem Ipsum has been the industry's standard dummy text  ever since the 1500s, when an unknown printer took a galley of type and  scrambled it to make a type specimen book. It has survived not only five  centuries, but also the leap
-						</p>
-					</section>
-					<section>
-						<h2>{SECOND_PONT}</h2>
-						<h3>{SUB_TITLE_2}</h3>
-						<p>
-							Lorem Ipsum is simply dummy text of the printing and typesetting  industry. Lorem Ipsum has been the industry's standard dummy text  ever since the 1500s, when an unknown printer took a galley of type and  scrambled it to make a type specimen book. It has survived not only five  centuries, but also the leap
-						</p>
-					</section>
-					<section>
-						<h2>{SECOND_PONT}</h2>
-						<h3>{SUB_TITLE_3}</h3>
-						<p>
-							Lorem Ipsum is simply dummy text of the printing and typesetting  industry. Lorem Ipsum has been the industry's standard dummy text  ever since the 1500s, when an unknown printer took a galley of type and  scrambled it to make a type specimen book. It has survived not only five  centuries, but also the leap
-						</p>
 					</section>
 				</section>
 
