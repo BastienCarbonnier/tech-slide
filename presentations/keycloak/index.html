@@ -30,7 +30,7 @@
 				<section  data-transition="zoom">
 					<img width="200" src="https://www.keycloak.org/resources/images/keycloak_logo_200px.svg"/>
 					<h2>Keycloak</h2>
-					<h3>Plus qu'un trousseau de clés !</h3>
+					<h3>Le maître des clés !</h3>
 					<script>
 						if (!!theme?.logo) {
 							document.write('<img width="200" height="200" src="' + theme.logo + '" alt="">');
@@ -72,7 +72,7 @@
 						</ul>
 					</section>
 					<section>
-						<h3>Fonctionnalités</h3>
+						<h3>Fonctionnalités principales</h3>
 						<ul>
 							<li>Customisation (Thème, SPI)</li>
 							<li>Différents modes d'authentification</li>
@@ -128,9 +128,43 @@
 				<!--TROISIEME_PONT SLIDE-->
 				<section data-transition="convex" data-state="header header-img">
 					<section>
-						<h3>Performances</h3>
+						<h3>Tests de montée en charge</h3>
+						<h4>Conditions des tests</h4>
 						<ul>
-							<li></li>
+							<li>Utilisation de l'outil k6</li>
+							<li>Scénario de création de comptes et connexions</li>
+							<li>Génération d'utilisateurs virtuels simulant le comportement d'un utilisateur lambda</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Tests de montée en charge</h3>
+						<h4>Test 1 : 0 à 500 utilisateurs constant sur 15 minutes</h4>
+						<ul>
+							<li>Ressources allouées : 1500m CPU, 1GiB Mémoire</li>
+							<li>Nombre total de requêtes : ~265000</li>
+							<li>Tentatives de connexion : ~9100 dont 0 échouées</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Tests de montée en charge</h3>
+						<h4>Test 2 : 0 à 600 utilisateurs constant sur 60 minutes</h4>
+						<ul>
+							<li>Ressources allouées : 1500m CPU, 1GiB Mémoire</li>
+							<li>Nombre total de requêtes : ~1155000</li>
+							<li>Tentatives de connexion : ~38000 dont 530 échouées</li>
+							<li>Erreurs dû au nombre maximum de connexions à la bdd</li>
+						</ul>
+					</section>
+				</section>
+
+				<!--QUATRIEME_PONT SLIDE-->
+				<section data-transition="convex" data-state="header header-img">
+					<section>
+						<h3>Démonstration</h3>
+						<ul>
+							<li>Gestion des clients et utilisateurs</li>
+							<li>Présentation des rôles</li>
+							<li>Intégration à un projet Angular ou React</li>
 						</ul>
 					</section>
 				</section>
